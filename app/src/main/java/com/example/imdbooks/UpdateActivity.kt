@@ -14,10 +14,10 @@ class UpdateActivity : AppCompatActivity(){
         binding = ActivityUpdateBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val productName = binding.productNameInput
-        val productCode = binding.productCodeInput
-        val productStock = binding.stockInput
-        val productDescription = binding.productDescInput
+        val bookName = binding.bookNameInput
+        val bookCode = binding.bookCodeInput
+        val bookStock = binding.stockInput
+        val bookDescription = binding.bookDescInput
 
         val saveBtn = binding.saveButton
         val clearBtn = binding.clearButton
@@ -25,20 +25,20 @@ class UpdateActivity : AppCompatActivity(){
 
 
         saveBtn.setOnClickListener {
-            if(productCode.text.isEmpty()){
-                Toast.makeText(this, "Id is required to update a product", Toast.LENGTH_SHORT).show()
+            if(bookCode.text.isEmpty()){
+                Toast.makeText(this, "Id is required to update a book", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            if( productName.text.isEmpty() && productStock.text.isEmpty() && productDescription.text.isEmpty()){
-                Toast.makeText(this, "Fill at least one of the fields to updated a product", Toast.LENGTH_SHORT).show()
+            if( bookName.text.isEmpty() && bookStock.text.isEmpty() && bookDescription.text.isEmpty()){
+                Toast.makeText(this, "Fill at least one of the fields to updated a book", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
             val currentProducts = Utils.getProducts(this)
 
-            val existingProduct = currentProducts.find { it.id.toInt() == productCode.text.toString().toInt() }
+            val existingProduct = currentProducts.find { it.id.toInt() == bookCode.text.toString().toInt() }
 
-            if (!currentProducts.any { it.id.toInt() == productCode.text.toString().toInt() }) {
-                Toast.makeText(this, "A product with this ID  doesn't exist. Please use a different ID.", Toast.LENGTH_LONG).show()
+            if (!currentProducts.any { it.id.toInt() == bookCode.text.toString().toInt() }) {
+                Toast.makeText(this, "A book with this ID  doesn't exist. Please use a different ID.", Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
 
@@ -46,14 +46,14 @@ class UpdateActivity : AppCompatActivity(){
                 return@setOnClickListener
             }
 
-            productStock.text.toString().toIntOrNull()?.let {
+            bookStock.text.toString().toIntOrNull()?.let {
                 existingProduct.stock = it
             }
-            if (productName.text.isNotEmpty()) {
-                existingProduct.name = productName.text.toString()
+            if (bookName.text.isNotEmpty()) {
+                existingProduct.name = bookName.text.toString()
             }
-            if (productDescription.text.isNotEmpty()) {
-                existingProduct.description = productDescription.text.toString()
+            if (bookDescription.text.isNotEmpty()) {
+                existingProduct.description = bookDescription.text.toString()
             }
 
             Utils.saveProductsMutableList(this, currentProducts)
@@ -65,10 +65,10 @@ class UpdateActivity : AppCompatActivity(){
         }
 
         clearBtn.setOnClickListener {
-            productName.text.clear()
-            productStock.text.clear()
-            productDescription.text.clear()
-            productCode.text.clear()
+            bookName.text.clear()
+            bookStock.text.clear()
+            bookDescription.text.clear()
+            bookCode.text.clear()
         }
 
         returnBtn.setOnClickListener {

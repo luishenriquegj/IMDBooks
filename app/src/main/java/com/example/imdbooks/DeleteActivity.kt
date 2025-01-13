@@ -18,14 +18,14 @@ class DeleteActivity : AppCompatActivity(){
         val cancelBtn = binding.cancelBtn
 
         deleteBtn.setOnClickListener {
-            val productIdInput = binding.productIdInput.text.toString().toIntOrNull()
+            val bookIdInput = binding.bookIdInput.text.toString().toIntOrNull()
 
-            if (productIdInput == null) {
-                Toast.makeText(this, "Please insert a valid product ID", Toast.LENGTH_SHORT).show()
+            if (bookIdInput == null) {
+                Toast.makeText(this, "Please insert a valid book ID", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            if(!deleteProductById(this,productIdInput)){
+            if(!deleteProductById(this,bookIdInput)){
                 Toast.makeText(this, "Product with Id not found!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }else{

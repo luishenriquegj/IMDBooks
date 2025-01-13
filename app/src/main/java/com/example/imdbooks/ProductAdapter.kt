@@ -8,13 +8,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.JsonSyntaxException
 
-class ProductAdapter(private var productList: MutableList<Product>) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
+class ProductAdapter(private var bookList: MutableList<Product>) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
 
     class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val productName: TextView = itemView.findViewById(R.id.productName)
-        val productCode: TextView = itemView.findViewById(R.id.productCode)
-        val productStock: TextView = itemView.findViewById(R.id.productStock)
-        val productDescription: TextView = itemView.findViewById(R.id.productDescription)
+        val bookName: TextView = itemView.findViewById(R.id.bookName)
+        val bookCode: TextView = itemView.findViewById(R.id.bookCode)
+        val bookStock: TextView = itemView.findViewById(R.id.bookStock)
+        val bookDescription: TextView = itemView.findViewById(R.id.bookDescription)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
@@ -23,19 +23,19 @@ class ProductAdapter(private var productList: MutableList<Product>) : RecyclerVi
     }
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
-        val product: Product = productList[position]
+        val book: Product = bookList[position]
         try {
-            holder.productName.text = product.name
-            holder.productCode.text = product.id.toString()
-            holder.productStock.text = product.stock.toString()
-            holder.productDescription.text = product.description
+            holder.bookName.text = book.name
+            holder.bookCode.text = book.id.toString()
+            holder.bookStock.text = book.stock.toString()
+            holder.bookDescription.text = book.description
         } catch (e: JsonSyntaxException) {
-            Log.e("ProductAdapter", "Failed to parse product JSON", e)
+            Log.e("ProductAdapter", "Failed to parse book JSON", e)
         }
     }
 
     override fun getItemCount(): Int {
-        return productList.size
+        return bookList.size
     }
 
 

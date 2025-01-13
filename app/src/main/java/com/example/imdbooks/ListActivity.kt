@@ -17,7 +17,7 @@ class ListActivity : AppCompatActivity(){
         setContentView(binding.root)
         val currentProducts: MutableList<Product> = Utils.getProducts(this)
 
-        val recyclerView = binding.productRecyclerView
+        val recyclerView = binding.bookRecyclerView
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = ProductAdapter(currentProducts)
     }
@@ -28,7 +28,7 @@ class ListActivity : AppCompatActivity(){
         setContentView(binding.root)
         val currentProducts: MutableList<Product> = Utils.getProducts(this)
         val returnBtn = binding.button
-        val recyclerView = binding.productRecyclerView
+        val recyclerView = binding.bookRecyclerView
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = ProductAdapter(currentProducts)
 

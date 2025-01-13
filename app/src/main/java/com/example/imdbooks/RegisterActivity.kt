@@ -20,46 +20,46 @@ class RegisterActivity : AppCompatActivity() {
         val clearBtn = binding.clearButton
         val returnBtn = binding.returnBtn
 
-        val productNameInput = binding.productNameInput
-        val productCodeInput = binding.productCodeInput
-        val productStockInput = binding.stockInput
-        val productDescriptionInput = binding.productDescInput
+        val bookNameInput = binding.bookNameInput
+        val bookCodeInput = binding.bookCodeInput
+        val bookStockInput = binding.stockInput
+        val bookDescriptionInput = binding.bookDescInput
 
         saveBtn.setOnClickListener {
-            val productName = binding.productNameInput.text.toString().trim()
-            val productCode = binding.productCodeInput.text.toString().toIntOrNull()
-            val productStock = binding.stockInput.text.toString().toIntOrNull()
-            val productDescription = escapeJsonString(binding.productDescInput.text.toString().trim())
+            val bookName = binding.bookNameInput.text.toString().trim()
+            val bookCode = binding.bookCodeInput.text.toString().toIntOrNull()
+            val bookStock = binding.stockInput.text.toString().toIntOrNull()
+            val bookDescription = escapeJsonString(binding.bookDescInput.text.toString().trim())
             val currentProducts = Utils.getProducts(this)
 
-            if (productCode !=null  && productCode > 0 ) {
+            if (bookCode !=null  && bookCode > 0 ) {
                 when {
-                    currentProducts.any { it.id.toInt() == productCode.toInt() } ->{
-                        Toast.makeText(this, "A product with this ID already exists. Please use a different ID.", Toast.LENGTH_LONG).show()
+                    currentProducts.any { it.id.toInt() == bookCode.toInt() } ->{
+                        Toast.makeText(this, "A book with this ID already exists. Please use a different ID.", Toast.LENGTH_LONG).show()
 
                     }
 
-                    productName.isEmpty() -> {
-                        Toast.makeText(this, "Please add a valid product name", Toast.LENGTH_LONG).show()
+                    bookName.isEmpty() -> {
+                        Toast.makeText(this, "Please add a valid book name", Toast.LENGTH_LONG).show()
                     }
 
-                    productStock == null || productStock <= 0 -> {
+                    bookStock == null || bookStock <= 0 -> {
                         Toast.makeText(this, "Please add a valid stock quantity (greater than 0)", Toast.LENGTH_LONG).show()
                     }
 
-                    productDescription.isEmpty() -> {
-                        Toast.makeText(this, "Please add a product description", Toast.LENGTH_LONG).show()
+                    bookDescription.isEmpty() -> {
+                        Toast.makeText(this, "Please add a book description", Toast.LENGTH_LONG).show()
                     }
 
                     else -> {
 
-                        val product = Product(
-                            productName,
-                            productCode,
-                            productDescription,
-                            productStock
+                        val book = Product(
+                            bookName,
+                            bookCode,
+                            bookDescription,
+                            bookStock
                         )
-                        currentProducts.add(product)
+                        currentProducts.add(book)
 
                         Utils.saveProductsMutableList(this, currentProducts)
 
@@ -69,16 +69,16 @@ class RegisterActivity : AppCompatActivity() {
                     }
                 }
             } else {
-                Toast.makeText(this, "Please add a valid product code (a positive number)", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Please add a valid book code (a positive number)", Toast.LENGTH_LONG).show()
             }
         }
 
 
         clearBtn.setOnClickListener {
-            productNameInput.text.clear()
-            productStockInput.text.clear()
-            productDescriptionInput.text.clear()
-            productCodeInput.text.clear()
+            bookNameInput.text.clear()
+            bookStockInput.text.clear()
+            bookDescriptionInput.text.clear()
+            bookCodeInput.text.clear()
             Toast.makeText(this, "All field values were cleared", Toast.LENGTH_SHORT).show()
         }
 

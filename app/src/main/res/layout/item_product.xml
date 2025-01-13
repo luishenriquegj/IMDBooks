@@ -34,7 +34,7 @@
                         android:textSize="14sp" />
 
                     <TextView
-                        android:id="@+id/productName"
+                        android:id="@+id/bookName"
                         android:layout_width="126dp"
                         android:layout_height="match_parent"
                         android:textSize="18sp"
@@ -65,7 +65,7 @@
                             android:text="ISBN:" />
 
                         <TextView
-                            android:id="@+id/productCode"
+                            android:id="@+id/bookCode"
                             android:layout_width="161dp"
                             android:layout_height="wrap_content"
                             android:rotation="0"
@@ -91,7 +91,7 @@
                             android:text="stock: " />
 
                         <TextView
-                            android:id="@+id/productStock"
+                            android:id="@+id/bookStock"
                             android:layout_width="141dp"
                             android:layout_height="match_parent"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -118,7 +118,7 @@
                     android:text="description:" />
 
                 <TextView
-                    android:id="@+id/productDescription"
+                    android:id="@+id/bookDescription"
                     android:layout_width="match_parent"
                     android:layout_height="78dp"
                     app:layout_constraintBottom_toBottomOf="parent"

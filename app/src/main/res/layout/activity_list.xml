@@ -16,7 +16,7 @@
         app:layout_constraintTop_toBottomOf="@+id/appTitle"
         tools:ignore="ExtraText">
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/productRecyclerView"
+                android:id="@+id/bookRecyclerView"
                 android:scrollbars="vertical"
                 android:fadeScrollbars="false"
                 android:layout_width="378dp"

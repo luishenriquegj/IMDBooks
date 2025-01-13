@@ -26,7 +26,7 @@
         android:id="@+id/textView12"
         android:layout_width="239dp"
         android:layout_height="35dp"
-        android:text="@string/register_product"
+        android:text="@string/register_book"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textSize="24sp"
@@ -39,7 +39,7 @@
         app:layout_constraintVertical_bias="0.214" />
 
     <EditText
-        android:id="@+id/productDescInput"
+        android:id="@+id/bookDescInput"
         android:layout_width="288dp"
         android:layout_height="47dp"
         android:layout_marginStart="59dp"
@@ -49,7 +49,7 @@
         android:autofillHints=""
         android:ems="10"
         android:gravity="start|top"
-        android:hint="@string/product_description_example"
+        android:hint="@string/book_description_example"
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -87,7 +87,7 @@
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/product_description"
+        android:text="@string/book_description"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.204"
@@ -96,12 +96,12 @@
         app:layout_constraintVertical_bias="0.441" />
 
     <EditText
-        android:id="@+id/productNameInput"
+        android:id="@+id/bookNameInput"
         android:layout_width="288dp"
         android:layout_height="45dp"
         android:autofillHints=""
         android:ems="10"
-        android:hint="@string/product_name_example"
+        android:hint="@string/book_name_example"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -114,7 +114,7 @@
         android:id="@+id/textView17"
         android:layout_width="123dp"
         android:layout_height="24dp"
-        android:text="@string/product_code"
+        android:text="@string/book_code"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.204"
@@ -162,7 +162,7 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/product_name"
+        android:text="@string/book_name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.182"
@@ -171,7 +171,7 @@
         app:layout_constraintVertical_bias="0.318" />
 
     <EditText
-        android:id="@+id/productCodeInput"
+        android:id="@+id/bookCodeInput"
         android:layout_width="288dp"
         android:layout_height="45dp"
         android:autofillHints=""
