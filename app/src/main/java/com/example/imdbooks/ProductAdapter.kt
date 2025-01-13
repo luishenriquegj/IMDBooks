@@ -4,17 +4,19 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.google.gson.JsonSyntaxException
 
 class ProductAdapter(private var bookList: MutableList<Product>) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
 
     class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val bookName: TextView = itemView.findViewById(R.id.bookName)
-        val bookCode: TextView = itemView.findViewById(R.id.bookCode)
-        val bookStock: TextView = itemView.findViewById(R.id.bookStock)
-        val bookDescription: TextView = itemView.findViewById(R.id.bookDescription)
+        val publisherText: TextView = itemView.findViewById(R.id.publisherValue)
+        val publishedDate: TextView = itemView.findViewById(R.id.publishDate)
+        val bookCover :ImageView =itemView.findViewById(R.id.bookCover)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
@@ -26,13 +28,17 @@ class ProductAdapter(private var bookList: MutableList<Product>) : RecyclerView.
         val book: Product = bookList[position]
         try {
             holder.bookName.text = book.name
-            holder.bookCode.text = book.id.toString()
-            holder.bookStock.text = book.stock.toString()
-            holder.bookDescription.text = book.description
+            holder.publisherText.text = book.publisher
+            holder.publishedDate.text = book.publishedDate
+            Glide.with(holder.itemView.context)
+                .load(book.bookCover)
+                .into(holder.bookCover)
+
         } catch (e: JsonSyntaxException) {
             Log.e("ProductAdapter", "Failed to parse book JSON", e)
         }
     }
+
 
     override fun getItemCount(): Int {
         return bookList.size

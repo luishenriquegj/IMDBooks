@@ -22,14 +22,20 @@ class RegisterActivity : AppCompatActivity() {
 
         val bookNameInput = binding.bookNameInput
         val bookCodeInput = binding.bookCodeInput
-        val bookStockInput = binding.stockInput
-        val bookDescriptionInput = binding.bookDescInput
+        val bookCoverInput = binding.bookCoverInput
+        val bookDescriptionInput = binding.bookDescription
+        val bookAuthorInput = binding.bookAuthor
+        val bookPublisherInput = binding.bookPublisherInput
+        val bookPublishedDate= binding.bookPublishDate
 
         saveBtn.setOnClickListener {
             val bookName = binding.bookNameInput.text.toString().trim()
+            val bookAuthor = binding.bookAuthor.text.toString().trim()
             val bookCode = binding.bookCodeInput.text.toString().toIntOrNull()
-            val bookStock = binding.stockInput.text.toString().toIntOrNull()
-            val bookDescription = escapeJsonString(binding.bookDescInput.text.toString().trim())
+            val bookCover = binding.bookCoverInput.text.toString().trim()
+            val bookPublisher = binding.bookPublisherInput.text.toString().trim()
+            val bookDescription = escapeJsonString(binding.bookDescription.text.toString().trim())
+            val bookPublishDate = binding.bookPublishDate.text.toString().trim()
             val currentProducts = Utils.getProducts(this)
 
             if (bookCode !=null  && bookCode > 0 ) {
@@ -43,21 +49,32 @@ class RegisterActivity : AppCompatActivity() {
                         Toast.makeText(this, "Please add a valid book name", Toast.LENGTH_LONG).show()
                     }
 
-                    bookStock == null || bookStock <= 0 -> {
-                        Toast.makeText(this, "Please add a valid stock quantity (greater than 0)", Toast.LENGTH_LONG).show()
-                    }
-
                     bookDescription.isEmpty() -> {
-                        Toast.makeText(this, "Please add a book description", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this, "Please add the book description", Toast.LENGTH_LONG).show()
+                    }
+                    bookAuthor.isEmpty() -> {
+                        Toast.makeText(this, "Please add the book Author name", Toast.LENGTH_LONG).show()
+                    }
+                    bookCover.isEmpty() ->{
+                        Toast.makeText(this, "Please add the book cover url", Toast.LENGTH_LONG).show()
+                    }
+                    bookPublisher.isEmpty() ->{
+                        Toast.makeText(this, "Please add a Publisher for the book", Toast.LENGTH_LONG).show()
+                    }
+                    bookPublishDate.isEmpty() ->{
+                        Toast.makeText(this, "Please add a Published date for the book", Toast.LENGTH_LONG).show()
                     }
 
                     else -> {
-
+                        println(bookCover)
                         val book = Product(
                             bookName,
                             bookCode,
                             bookDescription,
-                            bookStock
+                            bookCover,
+                            bookPublisher,
+                            bookAuthor,
+                            bookPublishDate,
                         )
                         currentProducts.add(book)
 
@@ -76,9 +93,12 @@ class RegisterActivity : AppCompatActivity() {
 
         clearBtn.setOnClickListener {
             bookNameInput.text.clear()
-            bookStockInput.text.clear()
+            bookCoverInput.text.clear()
+            bookAuthorInput.text.clear()
             bookDescriptionInput.text.clear()
             bookCodeInput.text.clear()
+            bookPublisherInput.text.clear()
+            bookPublishedDate.text.clear()
             Toast.makeText(this, "All field values were cleared", Toast.LENGTH_SHORT).show()
         }
 

@@ -86,6 +86,7 @@
             android:id="@+id/bookNameInput"
             android:layout_width="299dp"
             android:layout_height="45dp"
+            android:autofillHints=""
             android:ems="10"
             android:hint="@string/book_name_example"
             android:inputType="text"
@@ -112,6 +113,7 @@
             android:id="@+id/bookDescInput"
             android:layout_width="299dp"
             android:layout_height="45dp"
+            android:autofillHints=""
             android:ems="10"
             android:hint="@string/this_is_an_example_of_a_description"
             android:inputType="text"
@@ -174,7 +176,7 @@
             app:layout_constraintVertical_bias="0.564" />
 
         <EditText
-            android:id="@+id/stockInput"
+            android:id="@+id/bookCoverInput"
             android:layout_width="299dp"
             android:layout_height="45dp"
             android:autofillHints=""

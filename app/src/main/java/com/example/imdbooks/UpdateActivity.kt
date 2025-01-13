@@ -16,7 +16,6 @@ class UpdateActivity : AppCompatActivity(){
 
         val bookName = binding.bookNameInput
         val bookCode = binding.bookCodeInput
-        val bookStock = binding.stockInput
         val bookDescription = binding.bookDescInput
 
         val saveBtn = binding.saveButton
@@ -26,10 +25,10 @@ class UpdateActivity : AppCompatActivity(){
 
         saveBtn.setOnClickListener {
             if(bookCode.text.isEmpty()){
-                Toast.makeText(this, "Id is required to update a book", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "ISBN is required to update a book", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            if( bookName.text.isEmpty() && bookStock.text.isEmpty() && bookDescription.text.isEmpty()){
+            if( bookName.text.isEmpty()  && bookDescription.text.isEmpty()){
                 Toast.makeText(this, "Fill at least one of the fields to updated a book", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
@@ -38,7 +37,7 @@ class UpdateActivity : AppCompatActivity(){
             val existingProduct = currentProducts.find { it.id.toInt() == bookCode.text.toString().toInt() }
 
             if (!currentProducts.any { it.id.toInt() == bookCode.text.toString().toInt() }) {
-                Toast.makeText(this, "A book with this ID  doesn't exist. Please use a different ID.", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "A book with this ISBN  doesn't exist. Please use a different ISBN.", Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
 
@@ -46,9 +45,6 @@ class UpdateActivity : AppCompatActivity(){
                 return@setOnClickListener
             }
 
-            bookStock.text.toString().toIntOrNull()?.let {
-                existingProduct.stock = it
-            }
             if (bookName.text.isNotEmpty()) {
                 existingProduct.name = bookName.text.toString()
             }
@@ -66,7 +62,6 @@ class UpdateActivity : AppCompatActivity(){
 
         clearBtn.setOnClickListener {
             bookName.text.clear()
-            bookStock.text.clear()
             bookDescription.text.clear()
             bookCode.text.clear()
         }

@@ -9,6 +9,7 @@ android {
 
     buildFeatures {
         viewBinding = true
+        //noinspection DataBindingWithoutKapt
         dataBinding = true
     }
 
@@ -60,6 +61,8 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation (libs.design)
     implementation (libs.material)
+    implementation (libs.glide)
+    annotationProcessor (libs.compiler)
     implementation (libs.androidx.activity.ktx)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.recyclerview)

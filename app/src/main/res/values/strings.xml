@@ -6,9 +6,9 @@
     <string name="_1234567">1234567</string>
     <string name="delete">Delete</string>
     <string name="cancel">Cancel</string>
-    <string name="book_description">Product description</string>
+    <string name="book_description">Book description</string>
     <string name="stock_quantity">stock quantity</string>
-    <string name="book_name">Product name</string>
+    <string name="book_name">Book title</string>
     <string name="save">save</string>
     <string name="clear">clear</string>
     <string name="book_name_example">book name example</string>
@@ -27,4 +27,20 @@
     <string name="username">username</string>
     <string name="type_your_username">type your username:</string>
     <string name="return_to_login_screen">return to login screen</string>
+    <string name="book_cover">book cover</string>
+    <string name="title">title:</string>
+    <string name="placeholder">placeholder</string>
+    <string name="publisher">publisher:</string>
+    <string name="pubplaceholder">pubplaceholder</string>
+    <string name="published_on">published on:</string>
+    <string name="_01_01_2001">01/01/2001</string>
+    <string name="_01_01_2000">01/01/2000</string>
+    <string name="book_publish_date">Book Publish date</string>
+    <string name="https_www_url_com">https://www.url.com</string>
+    <string name="book_title">book title</string>
+    <string name="publshier_example">Publshier example</string>
+    <string name="name_surename">Name Surename</string>
+    <string name="book_publisher">Book Publisher</string>
+    <string name="book_cover_url">book cover url</string>
+    <string name="book_author">book author</string>
 </resources>
