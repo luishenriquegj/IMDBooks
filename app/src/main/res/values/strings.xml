@@ -18,10 +18,13 @@
     <string name="login">Login</string>
     <string name="example_something_com">example@something.com</string>
     <string name="e_mail">e-mail</string>
-    <string name="forgot_my_password">forgot my password</string>
+    <string name="create_new_user">create new user</string>
     <string name="password_hint">****************</string>
     <string name="password">Password</string>
     <string name="returnTxt">return</string>
     <string name="update_product">update product</string>
     <string name="this_is_an_example_of_a_description">this is an example of a description</string>
+    <string name="username">username</string>
+    <string name="type_your_username">type your username:</string>
+    <string name="return_to_login_screen">return to login screen</string>
 </resources>

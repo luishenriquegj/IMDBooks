@@ -6,13 +6,10 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.imdbooks.databinding.ActivityMainBinding
+import com.example.imdbooks.sharedPreferencesUtils.Utils
 
 class MainActivity : AppCompatActivity() {
-    companion object {
-        const val EMAIL_KEY = "email_key"
-        const val PASSWORD_KEY = "password_key"
-        const val FIRST_START_KEY = "first_start"
-    }
+
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var userPrefs: SharedPreferences
@@ -24,41 +21,39 @@ class MainActivity : AppCompatActivity() {
 
         userPrefs = getSharedPreferences("userCredentials", MODE_PRIVATE)
 
-        if (userPrefs.getBoolean(FIRST_START_KEY, true)) {
-            initializeDefaultUser()
-        }
 
+        val allUsers = Utils.getAllUsers(this)
         val loginBtn = binding.loginBtn
         val passwordEdt = binding.loginPassword
         val emailEdt = binding.loginEmail
+        val createNewUseBtn = binding.registerBtn
 
         loginBtn.setOnClickListener {
             val inputEmail = emailEdt.text.toString()
             val inputPassword = passwordEdt.text.toString()
 
+
             if (inputEmail.isEmpty() || inputPassword.isEmpty()) {
-                Toast.makeText(this, "Please enter email and password", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Please enter a username and a matching password", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            val storedEmail = userPrefs.getString(EMAIL_KEY, null)
-            val storedPassword = userPrefs.getString(PASSWORD_KEY, null)
-
-            if (inputEmail == storedEmail && inputPassword == storedPassword) {
-                Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this@MainActivity,MenuActivity::class.java))
-            } else {
-                Toast.makeText(this, "Invalid email or password", Toast.LENGTH_SHORT).show()
+            when {
+                allUsers.any {
+                    it.getUsername() == inputEmail && it.getPassword() == inputPassword
+                } -> {
+                    Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this@MainActivity,MenuActivity::class.java))
+                }
+                else -> {
+                    Toast.makeText(this, "Invalid username or password", Toast.LENGTH_SHORT).show()
+                }
             }
+        }
+        createNewUseBtn.setOnClickListener {
+            startActivity(Intent(this@MainActivity,CreateNewUserActivity::class.java))
         }
     }
 
-    private fun initializeDefaultUser() {
-        val editor = userPrefs.edit()
-        editor.putString(EMAIL_KEY, "admin")
-        editor.putString(PASSWORD_KEY, "admin")
-        editor.putBoolean(FIRST_START_KEY, false)
-        editor.apply()
-        Toast.makeText(this, "Default user created: admin/admin", Toast.LENGTH_SHORT).show()
-    }
+
 }

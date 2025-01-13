@@ -87,7 +87,7 @@
         android:layout_width="126dp"
         android:layout_height="55dp"
         android:backgroundTint="#2196F3"
-        android:text="@string/forgot_my_password"
+        android:text="@string/create_new_user"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
