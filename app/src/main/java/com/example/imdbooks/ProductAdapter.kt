@@ -1,5 +1,6 @@
 package com.example.imdbooks
 
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +11,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.gson.JsonSyntaxException
 
-class ProductAdapter(private var bookList: MutableList<Product>) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
+class ProductAdapter(private var bookList: MutableList<Product>, private val onItemClicked: (Product) -> Unit)
+    : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
+
+    fun updateProducts(newProducts: MutableList<Product>?) {
+        if (newProducts != null) {
+            bookList = newProducts
+        }
+    }
 
     class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val bookName: TextView = itemView.findViewById(R.id.bookName)
@@ -26,6 +34,7 @@ class ProductAdapter(private var bookList: MutableList<Product>) : RecyclerView.
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
         val book: Product = bookList[position]
+
         try {
             holder.bookName.text = book.name
             holder.publisherText.text = book.publisher
@@ -34,16 +43,21 @@ class ProductAdapter(private var bookList: MutableList<Product>) : RecyclerView.
                 .load(book.bookCover)
                 .into(holder.bookCover)
 
+            holder.itemView.setOnClickListener {
+                val intent = Intent(holder.itemView.context, BookDetailActivity::class.java)
+                intent.putExtra("bookName", book.name)
+                intent.putExtra("publisher", book.publisher)
+                intent.putExtra("publishDate", book.publishedDate)
+                intent.putExtra("bookCoverUrl", book.bookCover)
+                holder.itemView.context.startActivity(intent)
+            }
+
         } catch (e: JsonSyntaxException) {
             Log.e("ProductAdapter", "Failed to parse book JSON", e)
         }
     }
 
-
     override fun getItemCount(): Int {
         return bookList.size
     }
-
-
-
 }
