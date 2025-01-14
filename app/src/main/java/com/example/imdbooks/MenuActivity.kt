@@ -3,7 +3,6 @@ package com.example.imdbooks
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.imdbooks.RegisterActivity
 import com.example.imdbooks.databinding.ActivityMenuBinding
 
 

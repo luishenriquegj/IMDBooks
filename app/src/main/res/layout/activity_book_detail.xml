@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Capa do Livro -->
+    <ImageView
+        android:id="@+id/bookCover"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:contentDescription="@string/book_cover" />
+
+    <!-- Nome do Livro -->
+    <TextView
+        android:id="@+id/bookName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- Nome do Publisher -->
+    <TextView
+        android:id="@+id/publisherValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp" />
+
+    <!-- Data de Publicação -->
+    <TextView
+        android:id="@+id/publishDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp" />
+
+    <!-- Descrição Breve do Livro -->
+    <TextView
+        android:id="@+id/bookDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="14sp" />
+
+    <!-- Botão de Retorno -->
+    <Button
+        android:id="@+id/buttonReturn"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="@string/returnTxt"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>
