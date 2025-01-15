@@ -1,6 +1,5 @@
 package com.example.imdbooks
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
@@ -31,10 +30,10 @@ class BookDetailActivity : AppCompatActivity() {
         returnBtn = findViewById(R.id.buttonReturn)
 
         // Recuperando os dados passados através da Intent
+        val bookCoverUrl = intent.getStringExtra("bookCoverUrl")
         val bookNameValue = intent.getStringExtra("bookName")
         val publisherValue = intent.getStringExtra("publisher")
         val publishDateValue = intent.getStringExtra("publishDate")
-        val bookCoverUrl = intent.getStringExtra("bookCoverUrl")
         val bookDescriptionValue = intent.getStringExtra("bookDescription")
 
         Log.d("BookDetailActivity", "Book Name: $bookNameValue")
@@ -49,10 +48,10 @@ class BookDetailActivity : AppCompatActivity() {
             .into(bookCover)
 
         // Exibindo os dados na interface
+        bookDescription.text = bookDescriptionValue
         bookName.text = bookNameValue
         publisher.text = publisherValue
         publishDate.text = publishDateValue
-        bookDescription.text = bookDescriptionValue
 
         // Configurando o botão de retorno
         returnBtn.setOnClickListener {

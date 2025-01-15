@@ -49,6 +49,7 @@ class ProductAdapter(private var bookList: MutableList<Product>, private val onI
                 intent.putExtra("publisher", book.publisher)
                 intent.putExtra("publishDate", book.publishedDate)
                 intent.putExtra("bookCoverUrl", book.bookCover)
+                intent.putExtra("bookDescription", book.description) // Adicionando a descrição do livro
                 holder.itemView.context.startActivity(intent)
             }
 
