@@ -19,7 +19,7 @@
     <string name="example_something_com">example@something.com</string>
     <string name="e_mail">e-mail</string>
     <string name="create_new_user">create new user</string>
-    <string name="password_hint">****************</string>
+    <string name="password_hint">***********</string>
     <string name="password">Password</string>
     <string name="returnTxt">return</string>
     <string name="update_book">update book</string>
