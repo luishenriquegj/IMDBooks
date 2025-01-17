@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- layout principal utilizando ConstraintLayout para organizar todos os elementos -->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,6 +11,7 @@
     tools:context=".MainActivity"
     tools:ignore="ExtraText">
 
+    <!-- header -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="113dp"
@@ -26,6 +29,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
+    <!-- texto central -->
     <TextView
         android:id="@+id/textView"
         android:layout_width="181dp"
@@ -39,6 +43,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.214" />
 
+    <!-- inserir email -->
     <EditText
         android:id="@+id/loginEmail"
         android:layout_width="236dp"
@@ -55,6 +60,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.428" />
 
+    <!-- texto email -->
     <TextView
         android:id="@+id/textView2"
         android:layout_width="97dp"
@@ -69,6 +75,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.341" />
 
+    <!-- botao login -->
     <Button
         android:id="@+id/loginBtn"
         android:layout_width="129dp"
@@ -82,6 +89,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.791" />
 
+    <!-- botao novo usuario -->
     <Button
         android:id="@+id/registerBtn"
         android:layout_width="126dp"
@@ -96,6 +104,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.924" />
 
+    <!-- inserir senha -->
     <EditText
         android:id="@+id/loginPassword"
         android:layout_width="237dp"
@@ -111,6 +120,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.62" />
 
+    <!-- texto senha -->
     <TextView
         android:id="@+id/passwordText"
         android:layout_width="wrap_content"
@@ -124,6 +134,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.541" />
-    />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

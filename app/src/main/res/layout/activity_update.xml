@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Layout principal utilizando ConstraintLayout para criar um design flexível e dinâmico -->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
+    <!-- ConstraintLayout aninhado para agrupar os elementos dentro do layout principal -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -13,6 +14,7 @@
         tools:layout_editor_absoluteX="121dp"
         tools:layout_editor_absoluteY="74dp">
 
+        <!-- Título da seção: "Atualizar Livro" -->
         <TextView
             android:id="@+id/textView12"
             android:layout_width="239dp"
@@ -28,6 +30,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.165" />
 
+        <!-- Barra de cabeçalho com o texto "IMD Books" -->
         <TextView
             android:id="@+id/textView6"
             android:layout_width="match_parent"
@@ -46,6 +49,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
+        <!-- Botão para salvar as alterações -->
         <Button
             android:id="@+id/saveButton"
             android:layout_width="114dp"
@@ -58,6 +62,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.76" />
 
+        <!-- Botão para retornar à tela anterior -->
         <Button
             android:id="@+id/returnBtn"
             android:layout_width="114dp"
@@ -70,6 +75,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.849" />
 
+        <!-- Botão para limpar os campos de entrada -->
         <Button
             android:id="@+id/clearButton"
             android:layout_width="114dp"
@@ -82,6 +88,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.76" />
 
+        <!-- Campo de entrada para o nome do livro -->
         <EditText
             android:id="@+id/bookNameInput"
             android:layout_width="299dp"
@@ -97,6 +104,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.281" />
 
+        <!-- Rótulo para o campo de entrada do nome do livro -->
         <TextView
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
@@ -109,6 +117,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.23" />
 
+        <!-- Campo de entrada para a descrição do livro -->
         <EditText
             android:id="@+id/bookDescInput"
             android:layout_width="299dp"
@@ -124,6 +133,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.405" />
 
+        <!-- Rótulo para o campo de entrada da descrição do livro -->
         <TextView
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
@@ -136,6 +146,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.349" />
 
+        <!-- Campo de entrada para o código do livro -->
         <EditText
             android:id="@+id/bookCodeInput"
             android:layout_width="299dp"
@@ -151,6 +162,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.632" />
 
+        <!-- Rótulo para o campo de entrada do código do livro -->
         <TextView
             android:id="@+id/textView10"
             android:layout_width="wrap_content"
@@ -163,6 +175,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.453" />
 
+        <!-- Rótulo para o campo de entrada do código do livro -->
         <TextView
             android:id="@+id/textView7"
             android:layout_width="123dp"
@@ -175,6 +188,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.564" />
 
+        <!-- Campo de entrada para a quantidade em estoque -->
         <EditText
             android:id="@+id/bookCoverInput"
             android:layout_width="299dp"

@@ -5,12 +5,11 @@
     android:layout_height="match_parent"
     android:layout_gravity="center">
 
+    <!-- Campo de entrada para a data de publicação do livro -->
     <EditText
         android:id="@+id/bookPublishDate"
         android:layout_width="288dp"
         android:layout_height="45dp"
-        android:autofillHints=""
-        android:ems="10"
         android:hint="@string/_01_01_2000"
         android:inputType="date"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,6 +19,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.855" />
 
+    <!-- Texto que descreve o rótulo da data de publicação -->
     <TextView
         android:id="@+id/textView26"
         android:layout_width="wrap_content"
@@ -32,6 +32,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.797" />
 
+    <!-- Cabeçalho principal do layout ("IMD Books") -->
     <TextView
         android:id="@+id/textView6"
         android:layout_width="match_parent"
@@ -49,27 +50,23 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
+    <!-- Subtítulo "Registrar Livro" -->
     <TextView
         android:id="@+id/textView12"
         android:layout_width="239dp"
         android:layout_height="35dp"
         android:text="@string/register_book"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textSize="24sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.172" />
 
+    <!-- Campo de entrada para o título do livro -->
     <EditText
         android:id="@+id/bookNameInput"
         android:layout_width="284dp"
         android:layout_height="41dp"
-        android:autofillHints=""
-        android:ems="10"
         android:hint="@string/book_name_example"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -79,6 +76,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.268" />
 
+    <!-- Rótulo para o campo do autor do livro -->
     <TextView
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
@@ -91,12 +89,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.598" />
 
+    <!-- Campo de entrada para a descrição do livro -->
     <EditText
         android:id="@+id/bookDescription"
         android:layout_width="288dp"
         android:layout_height="45dp"
-        android:autofillHints=""
-        android:ems="10"
         android:hint="@string/book_description_example"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -106,6 +103,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.355" />
 
+    <!-- Rótulo para o campo do código do livro -->
     <TextView
         android:id="@+id/textView17"
         android:layout_width="123dp"
@@ -118,6 +116,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.506" />
 
+    <!-- Rótulo para o campo de URL da capa do livro -->
     <TextView
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
@@ -130,6 +129,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.41" />
 
+    <!-- Rótulo para o campo do editor do livro -->
     <TextView
         android:id="@+id/textView21"
         android:layout_width="wrap_content"
@@ -142,12 +142,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.688" />
 
+    <!-- Campo de entrada para o autor do livro -->
     <EditText
         android:id="@+id/bookAuthor"
         android:layout_width="288dp"
         android:layout_height="45dp"
-        android:autofillHints=""
-        android:ems="10"
         android:hint="@string/name_surename"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -157,12 +156,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.648" />
 
+    <!-- Campo de entrada para o editor do livro -->
     <EditText
         android:id="@+id/bookPublisherInput"
         android:layout_width="288dp"
         android:layout_height="45dp"
-        android:autofillHints=""
-        android:ems="10"
         android:hint="@string/publshier_example"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -172,6 +170,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.749" />
 
+    <!-- Rótulo para o título do livro -->
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
@@ -184,6 +183,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.233" />
 
+    <!-- Rótulo para a descrição do livro -->
     <TextView
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
@@ -196,12 +196,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.316" />
 
+    <!-- Campo de entrada para o código do livro -->
     <EditText
         android:id="@+id/bookCodeInput"
         android:layout_width="288dp"
         android:layout_height="45dp"
-        android:autofillHints=""
-        android:ems="10"
         android:hint="@string/_1234567"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -211,12 +210,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.556" />
 
+    <!-- Campo de entrada para a URL da capa do livro -->
     <EditText
         android:id="@+id/bookCoverInput"
         android:layout_width="288dp"
         android:layout_height="45dp"
-        android:autofillHints=""
-        android:ems="10"
         android:hint="@string/https_www_url_com"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -226,6 +224,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.456" />
 
+    <!-- Botão para retornar à tela anterior -->
     <Button
         android:id="@+id/returnBtn"
         android:layout_width="114dp"
@@ -238,6 +237,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.923" />
 
+    <!-- Botão para limpar os campos -->
     <Button
         android:id="@+id/clearButton"
         android:layout_width="114dp"
@@ -250,6 +250,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.923" />
 
+    <!-- Botão para salvar o registro do livro -->
     <Button
         android:id="@+id/saveButton"
         android:layout_width="114dp"
@@ -261,5 +262,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.923" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

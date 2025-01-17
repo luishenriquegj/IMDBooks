@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Layout principal utilizando LinearLayout com orientação vertical e padding -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -6,16 +7,19 @@
     android:orientation="vertical"
     android:padding="8dp">
 
+    <!-- CardView que envolve o conteúdo, proporcionando um efeito de elevação -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="300dp"
         app:contentPadding="1sp">
 
+        <!-- LinearLayout externo para distribuir os elementos -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
+            <!-- LinearLayout a direita para o lado esquerdo, exibindo detalhes como título, editor e data de publicação -->
             <LinearLayout
                 android:layout_width="203dp"
                 android:layout_height="match_parent"
@@ -26,6 +30,7 @@
                     android:layout_height="56dp"
                     android:orientation="horizontal">
 
+                    <!-- Texto para o título do livro -->
                     <TextView
                         android:id="@+id/textView31"
                         android:layout_width="wrap_content"
@@ -36,6 +41,7 @@
                         android:textStyle="bold"
                         android:text="@string/title" />
 
+                    <!-- Nome do livro -->
                     <TextView
                         android:id="@+id/bookName"
                         android:layout_width="wrap_content"
@@ -46,11 +52,13 @@
                         android:text="@string/placeholder" />
                 </LinearLayout>
 
+                <!-- Segunda linha com o nome do editor -->
                 <LinearLayout
                     android:layout_width="201dp"
                     android:layout_height="56dp"
                     android:orientation="horizontal">
 
+                    <!-- Texto para o nome do editor -->
                     <TextView
                         android:id="@+id/textView32"
                         android:layout_width="114dp"
@@ -61,6 +69,7 @@
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
+                    <!-- Nome do editor -->
                     <TextView
                         android:id="@+id/publisherValue"
                         android:layout_width="141dp"
@@ -71,11 +80,13 @@
                         android:textSize="14sp" />
                 </LinearLayout>
 
+                <!-- Terceira linha com a data de publicação -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
+                    <!-- Texto para a data de publicação -->
                     <TextView
                         android:id="@+id/textView33"
                         android:layout_width="wrap_content"
@@ -86,6 +97,7 @@
                         android:textStyle="bold"
                         android:text="@string/published_on" />
 
+                    <!-- Data de publicação -->
                     <TextView
                         android:id="@+id/publishDate"
                         android:layout_width="wrap_content"
@@ -96,21 +108,20 @@
                         android:text="@string/_01_01_2001" />
                 </LinearLayout>
             </LinearLayout>
+
+            <!-- LinearLayout direito para exibir a imagem de capa do livro -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+
+                <!-- Imagem de capa do livro -->
                 <ImageView
                     android:id="@+id/bookCover"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:contentDescription="@string/book_cover"
-                />
-
+                    android:contentDescription="@string/book_cover" />
             </LinearLayout>
         </LinearLayout>
-
-
     </androidx.cardview.widget.CardView>
-
 </LinearLayout>

@@ -19,14 +19,14 @@
             android:orientation="horizontal"
             android:padding="8dp">
 
-            <!-- Detalhes do Livro -->
+            <!-- Card com detalhes do Livro -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:layout_weight="1">
 
-                <!-- Nome do Livro -->
+                <!-- Book name -->
                 <TextView
                     android:id="@+id/bookName"
                     android:layout_width="wrap_content"
@@ -44,7 +44,7 @@
                     android:text="@string/pubplaceholder"
                     android:layout_marginTop="8dp"/>
 
-                <!-- Data de Publicação -->
+                <!-- Publish date -->
                 <TextView
                     android:id="@+id/publishDate"
                     android:layout_width="wrap_content"
@@ -53,7 +53,7 @@
                     android:text="@string/_01_01_2001"
                     android:layout_marginTop="8dp"/>
 
-                <!-- Descrição do Livro -->
+                <!-- Book description -->
                 <TextView
                     android:id="@+id/bookDescription"
                     android:layout_width="wrap_content"
@@ -63,7 +63,7 @@
                     android:layout_marginTop="16dp"/>
             </LinearLayout>
 
-            <!-- Capa do Livro -->
+            <!-- Book cover -->
             <ImageView
                 android:id="@+id/bookCover"
                 android:layout_width="120dp"
@@ -74,7 +74,7 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <!-- Botão de Retorno -->
+    <!-- Botão de retorno -->
     <Button
         android:id="@+id/buttonReturn"
         android:layout_width="150dp"

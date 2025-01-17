@@ -1,7 +1,6 @@
 package com.example.imdbooks
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Button
@@ -36,16 +35,10 @@ class BookDetailActivity : AppCompatActivity() {
         val publishDateValue = intent.getStringExtra("publishDate")
         val bookDescriptionValue = intent.getStringExtra("bookDescription")
 
-        Log.d("BookDetailActivity", "Book Name: $bookNameValue")
-        Log.d("BookDetailActivity", "Publisher: $publisherValue")
-        Log.d("BookDetailActivity", "Publish Date: $publishDateValue")
-        Log.d("BookDetailActivity", "Book Cover URL: $bookCoverUrl")
-        Log.d("BookDetailActivity", "Description: $bookDescriptionValue")
-
         // Usando Glide para carregar a imagem da capa
         Glide.with(this)
-            .load(bookCoverUrl)
-            .into(bookCover)
+            .load(bookCoverUrl) // URL da imagem a ser carregada
+            .into(bookCover)    // Exibe a imagem no ImageView `bookCover`
 
         // Exibindo os dados na interface
         bookDescription.text = bookDescriptionValue
