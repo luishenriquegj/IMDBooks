@@ -29,7 +29,8 @@ class DeleteActivity : AppCompatActivity(){
             // Verifica se o ID inserido é válido (não nulo e numérico)
             if (bookIdInput == null) {
                 // Exibe uma mensagem informando que o ID é inválido.
-                Toast.makeText(this, "Please insert a valid book ID", Toast.LENGTH_SHORT).show()
+                Snackbar.make(view, "Please insert a valid book ID", Snackbar.LENGTH_SHORT).show()
+                //Toast.makeText(this, "Please insert a valid book ID", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
