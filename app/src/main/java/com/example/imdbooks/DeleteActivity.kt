@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.imdbooks.databinding.ActivityDeleteBinding
 import com.example.imdbooks.sharedPreferencesUtils.Utils.Companion.deleteProductById
+import com.google.android.material.snackbar.Snackbar
 
 // Atividade responsável por excluir um produto (livro) com base no ID fornecido pelo usuário.
 class DeleteActivity : AppCompatActivity(){
