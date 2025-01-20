@@ -52,36 +52,29 @@ class Utils {
             return gson.fromJson(json, type) ?: mutableListOf()
         }
 
-        fun getAllUsers(context: Context): MutableList<User> {
-            val sharedPreferences = context.getSharedPreferences("userCredentials", Context.MODE_PRIVATE)
-            val gson = Gson()
-            val json = sharedPreferences.getString("users", null)
-            val type = object : TypeToken<MutableList<User>>() {}.type
-            return gson.fromJson(json, type) ?: mutableListOf()
-        }
-
         fun deleteProductById(context: Context, bookId: Number): Boolean {
             val sharedPreferences = context.getSharedPreferences("booksPref", Context.MODE_PRIVATE)
             val editor = sharedPreferences.edit()
             val gson = Gson()
             val json = sharedPreferences.getString("books", null)
             val bookType = object : TypeToken<MutableList<Product>>() {}.type
-            val currentProducts: MutableList<Product> = gson.fromJson(json, bookType)
+
+            // Garante que a lista não seja nula
+            val currentProducts: MutableList<Product> = gson.fromJson(json, bookType) ?: mutableListOf()
 
             val iterator = currentProducts.iterator()
-            while (iterator.hasNext()) {
-                val book = iterator.next()
-                if (book.id.toInt() == bookId) {
-                    iterator.remove()
-                    val jsonProducts = gson.toJson(currentProducts)
-                    editor.putString("books", jsonProducts)
-                    editor.apply()
-                    return true
-                }
-            }
-            return false
+        while (iterator.hasNext()) {
+            val book = iterator.next()
+            if (book.id.toInt() == bookId) {
+                iterator.remove()
+                val jsonProducts = gson.toJson(currentProducts)
+                editor.putString("books", jsonProducts)
+                editor.apply()
+                return true
         }
-
+    }
+    return false
+}
 
     }
 }
