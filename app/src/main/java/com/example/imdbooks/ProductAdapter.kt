@@ -20,8 +20,9 @@ class ProductAdapter(
 
     // Metodo para atualizar a lista de produtos com novos dados
     fun updateProducts(newProducts: MutableList<Product>?) {
-        if (newProducts != null) { // Garante que a nova lista não seja nula
-            bookList = newProducts // Substitui a lista atual pela nova lista
+        if (newProducts != null) {
+            bookList = newProducts
+            notifyDataSetChanged() // Notifica o RecyclerView que os dados foram atualizados
         }
     }
 
